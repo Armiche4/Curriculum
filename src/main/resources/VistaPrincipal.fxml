@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="MainView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu id="_archivo" mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem id="nuevo" mnemonicParsing="false" onAction="#OnNuevoAction" text="Nuevo">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/nuevo.gif" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem id="abrir" mnemonicParsing="false" onAction="#OnAbrirAction" text="Abrir...">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/abrir.gif" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem id="guardar" mnemonicParsing="false" onAction="#OnGuardarAction" text="Guardar">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/guardar.gif" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem id="guardarComo" mnemonicParsing="false" onAction="#OnGuardarComoAction" text="Guardar como..." />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem id="salir" fx:id="salir" mnemonicParsing="false" onAction="#OnSalirAction" text="Salir">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+            <Menu id="ay_uda" mnemonicParsing="false" text="Ayuda">
+               <items>
+                  <MenuItem id="acerca" mnemonicParsing="false" text="Acerca de ..." />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TabPane prefHeight="375.0" prefWidth="601.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab id="personal" fx:id="personal" text="Personal" />
+          <Tab id="contactos" fx:id="contactos" text="Contactos" />
+            <Tab id="formacion" fx:id="formacion" text="Formacion" />
+            <Tab id="experiencia" fx:id="experiencia" text="Experiencia" />
+            <Tab id="conocimiento" fx:id="conocimiento" text="Conociemiento" />
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
